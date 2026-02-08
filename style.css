@@ -32,7 +32,7 @@ section:nth-child(even) { background-color: var(--bg-dark); }
 /* 照片等大网格 */
 .standard-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     margin-top: 20px;
 }
