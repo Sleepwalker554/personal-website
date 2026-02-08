@@ -23,21 +23,23 @@ body, html { margin: 0; padding: 0; overflow-x: hidden; scroll-behavior: smooth;
     z-index: 9999;
 }
 
-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 50px 10%; position: relative; box-sizing: border-box; }
+section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 5vh 10%; position: relative; box-sizing: border-box; }
 section:nth-child(even) { background-color: var(--bg-dark); }
 
-.content-box { max-width: 1100px; width: 100%; opacity: 0; transform: translateY(30px); transition: var(--transition-smooth); }
+.content-box { max-width: 1100px; width: 100%; opacity: 0; transform: translateY(30px); transition: var(--transition-smooth); box-sizing: border-box; }
 .in-view .content-box { opacity: 1; transform: translateY(0); }
 
 /* 照片等大网格 */
 .standard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-top: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5vw;
+    margin-top: 2vh;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.grid-item { display: flex; flex-direction: column; gap: 15px; }
+.grid-item { display: flex; flex-direction: column; gap: 15px; min-width: 0; box-sizing: border-box; }
 
 /* Travel section 特殊布局 */
 #travel {
@@ -62,7 +64,7 @@ section:nth-child(even) { background-color: var(--bg-dark); }
 .travel-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1vw;
+    gap: 0.5vw;
 }
 
 .travel-grid .img-wrapper {
@@ -92,14 +94,17 @@ section:nth-child(even) { background-color: var(--bg-dark); }
     width: 100%;
     overflow: hidden;
     border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .img-wrapper img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     filter: grayscale(0.2);
     transition: 0.8s;
+    box-sizing: border-box;
 }
 
 .grid-item:hover img { filter: grayscale(0); transform: scale(1.05); }
